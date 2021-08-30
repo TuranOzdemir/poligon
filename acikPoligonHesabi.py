@@ -1,6 +1,4 @@
-# Xy 1. semt açısı
-# Bt beta kırılma açısı
-# Pn p nokta sayısı Ya, Xa, Sn
+
 import math as m
 def kontrol(T):
     if 0<=T and T<=200:
@@ -16,6 +14,10 @@ Sn = []
 Pn = []
 Bt = []
 Pcount = 4
+# Xy 1. semt açısı
+# Bt beta kırılma açıları
+# Yn ve Xn ilk noktanın verilen koordinatları 
+# Sn verilen iki nokta arası uzunluklar
 def semtAcisi(Xy, Bt, Yn, Xn, Sn): 
     SA_list = []
     x = 0
@@ -37,9 +39,8 @@ def semtAcisi(Xy, Bt, Yn, Xn, Sn):
         Xn =Px       
         c+=1
     print(Pn)
-        
 semtAcisi(61.2547, [321.4856,47.1457,227.4785], 5474.48, 2457.72, [100.61,79.54,147.12])
-#print(m.sin(123.4567))
+
 
 
 
