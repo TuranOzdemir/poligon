@@ -12,6 +12,7 @@ for i in range (fy):
     points[x] = points.pop(big)
 print(points)
 
+
 # sonuçları buluyor en küçük abc değerleri ile 
 # en küçük points değerlerini eşleştirmek gerekiyor
 

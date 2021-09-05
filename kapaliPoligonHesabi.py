@@ -54,6 +54,7 @@ def kontrol(T):
         T-=600
     return T
 
+
 def hesapla(Xy, Bt, Yn, Xn, Sn): 
     SA_list = []
     x = 0

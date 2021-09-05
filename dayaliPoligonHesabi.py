@@ -74,6 +74,7 @@ def kontrol(T):
 
 
 
+
 def hesapla(Xy, Bt, Yn, Xn, Sn, IS, SS): 
     SA_list = []
     x = 0
