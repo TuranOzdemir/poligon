@@ -1,7 +1,6 @@
 a = 121
 b = 149
 c = 139
-lis = [a,b,c]
 fy = 7
 points = {a : 0, b  : 0, c : 0}
 

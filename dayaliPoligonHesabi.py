@@ -15,7 +15,7 @@ devam = False
 
 def kirilmaAcisiHatasi(Bt, IS, SS, devam):
     Bt_Sum = sum(Bt)
-    
+    print 
     fB = SS - (IS + Bt_Sum + len(Bt)+(200*180/200)) # kırılma açılarında yapılan hata miktarı
     FB = 1,5 * m.sqrt(len(Bt)) # yönetmelikteki formül(aşşağıdaki kontrol evresinde hata payının kabul edilebilirliğini kontrol etmek için kullanılır)
     if fB < FB:
@@ -78,23 +78,29 @@ def kontrol(T):
 
 
 def hesapla(Xy, Bt, Yn, Xn, Sn, IS, SS): 
-    x = 0
-    i=0
     c = 0
     Dyl = [] # bulunacak delta y ve delta xler bu iki liste içerisine daha sonra 
     Dxl = [] # kenar kapatma hesabı ile güncellenmek üzere eklenecek
+
+    #kırılma açı hatası burada hesaplanacak
     kirilmaAcisiHatasi(Bt, IS, SS, devam)
+
     for i in range (len(yeniBt)):
         # 1.adım
-        T = (Xy+yeniBt[c]) # konterol(T) fonksiyonunda +z işlemi yapılmak üzere ayrı hesaplanıyor
-        SA = kontrol(T) # ve SA bu işlemden sonra bulunuyor
-        # 2.adım 
-        Dy = Sn[c]*m.sin(m.radians(SA*(180/200)))
-        Dx = Sn[c]*m.cos(m.radians(SA*(180/200)))
+        for c in range (len(Sn)):
+
+            T = (Xy+yeniBt[c]) # konterol(T) fonksiyonunda +z işlemi yapılmak üzere ayrı hesaplanıyor
+            SA = kontrol(T) # ve SA bu işlemden sonra bulunuyor
+            # 2.adım 
+            Dy = Sn[c]*m.sin(m.radians(SA*(180/200)))
+            Dx = Sn[c]*m.cos(m.radians(SA*(180/200)))
         #delta y ve delta x leri listelere aldık daha sonra bu listeler ile kenar kapatma hata hesabı yapılacak
         # burada güncellenen 
-        Dyl.append(Dy)
-        Dxl.append(Dx)
+            Dyl.append(Dy)
+            Dxl.append(Dx)
+        # for döngüsü burada bitecek ve döngü dışında kenar kapatma hesabı yapılacak
+        # güncellenen dy ve dx ler ile tekrar bir for döngüsü kurulup dy ve dx lere yn 
+        # ve xn değerleri eklenip Py ve Px değerleri bulunacak 
         Py = Dy + Yn
         Px = Dx + Xn
         Xy = SA

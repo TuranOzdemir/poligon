@@ -13,23 +13,20 @@ def kontrol(T):
 Sn = []
 Pn = []
 Bt = []
-Pcount = 4
+
 # Xy 1. semt açısı
 # Bt beta kırılma açıları
 # Yn ve Xn ilk noktanın verilen koordinatları 
 # Sn verilen iki nokta arası uzunluklar
 def semtAcisi(Xy, Bt, Yn, Xn, Sn): 
-    SA_list = []
-    x = 0
-    i=0
     c = 0
     for i in range (len(Bt)):
         # 1.adım
-        T = (Xy+Bt[c])
+        T = (Xy+Bt[i])
         SA = kontrol(T)
         # 2.adım 
-        Py = Sn[c]*m.sin(m.radians(SA*(180/200))) + Yn
-        Px = Sn[c]*m.cos(m.radians(SA*(180/200))) + Xn
+        Py = Sn[i]*m.sin(m.radians(SA*(180/200))) + Yn
+        Px = Sn[i]*m.cos(m.radians(SA*(180/200))) + Xn
         Xy = SA
         n = []
         n.append(Py)

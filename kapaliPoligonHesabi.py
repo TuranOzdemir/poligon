@@ -87,3 +87,9 @@ def hesapla(Xy, Bt, Yn, Xn, Sn):
         c+=1
 # ------------------------------------------------
 
+
+    # fs = m.sqrt(fy**2 + Fx**2) 
+    # kapalı Kapalı poligon hesabında geçki başlanan noktada 
+    # bittiği için enine ve boyuna hataları hesaplanamaz. Bu nedenle doğrusal kapanma hatası 
+    # fs kenar kapanma hatası hesaplanır. 
+
